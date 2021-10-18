@@ -19,7 +19,7 @@ import aboutUs from '../../Image/medical-services.PNG';
 const Home = () => {
     return (
         <>
-        <div>
+        <div id="home">
         <Carousel>
             <Carousel.Item>
                 <img
@@ -59,7 +59,7 @@ const Home = () => {
         </Carousel>
         </div>
         {/* service section */}
-        <div className="service-container">
+        <div id="services" className="service-container">
             <h1 className="m-4">We Provide</h1>
             <div>
             <div className="row">
@@ -109,21 +109,22 @@ const Home = () => {
             </div> 
         </div>
         {/* Doctor Section */}
-        <div className="doctor-container">
+        <div id="doctors" className="doctor-container">
             <h2 className="m-4">About Our Doctors</h2>
             <div className="row">
             <div className= 'col-lg-6 col-md-6 col-12'>
                 <img id="doctor" src={doctor} alt="" />
             </div>
             <div className= 'col-lg-6 col-md-6 col-12 doctor-text'>
-                <h3>We Have</h3><br />
+                <h4>We Have</h4><br />
                 <h4>The Best Doctors</h4>
-                <p>We have specific type of doctor for almost every major system located in the human body. Regardless of specialty, doctors face the challenge of diagnosing and treating human disease, ailments, injuries, pain, or other conditions. This is done by listening to the patient, understanding the problem, and then using their scientific expertise to know how best to treat the ailment or concern.</p>
+                <p>We have specific type of doctor for almost every major system located in the human body. Regardless of specialty, doctors face the challenge of diagnosing and treating human disease, ailments, injuries, pain, or other conditions. This is done by listening to the patient,understanding the problem, and then using their scientific expertise to know how best to treat the ailment or concern.</p>
+                <div className="btn btn-primary">Our Doctors</div>
             </div>
             </div>
         </div>
         {/* news and article section */}
-        <div>
+        <div id="news">
             <h2 className="m-4">News & Articals</h2>
             <div className="row">
                 <div className="col-lg-3 col-md-6 col-12 service">
@@ -150,9 +151,12 @@ const Home = () => {
             </div>
         </div>
         {/* About US */}
-        <div>
-            <h2 className="m-4">About Us</h2>
-            <img className="w-100" src={aboutUs} alt="" />
+        <div id="about">
+            <h2 className="m-4 about-us">About Us</h2>
+            <div className="border border-danger border-5 rounded m-5 bg-danger">
+            <img className="w-100 rounded" src={aboutUs} alt="" />
+            <button className="btn-primary m-3 p-2 rounded">Learn More</button>
+            </div>
         </div>
         </>
     );
