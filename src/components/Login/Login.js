@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import initializeAuthentication from '../../Firebase/firebase.init';
-import { GoogleAuthProvider, getAuth, signInWithPopup, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { GoogleAuthProvider, getAuth, signInWithPopup, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendEmailVerification, sendPasswordResetEmail, updateProfile } from "firebase/auth";
+import { Button } from 'react-bootstrap';
 
 
 initializeAuthentication();
 const googleProvider = new GoogleAuthProvider();
 
 const Login = () => {
+    const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
@@ -22,6 +24,10 @@ const Login = () => {
 
     const toggleLogin = e =>{
         setIsLogin(e.target.checked);
+    }
+    
+    const handleNameChange = e =>{
+        setName(e.target.value);
     }
 
 
@@ -53,6 +59,7 @@ const Login = () => {
         .then(result =>{
             const user = result.user;
             console.log(user);
+            setError('');
         })
         .catch(error => {
             setError(error.message);
@@ -65,10 +72,30 @@ const Login = () => {
             const user = result.user
             console.log(user);
             setError('');
+            verifyEmail();
+            setUserName();
         })
         .catch((error) => {
             setError(error.message);
         });
+
+        const setUserName = () =>{
+            updateProfile(auth.currentUser, {
+                displayName: name})
+                .then(result =>{ })
+        }
+    }
+
+    const verifyEmail = () =>{
+        sendEmailVerification(auth.currentUser)
+        .then(result =>{
+            console.log(result);
+        })
+    }
+
+    const handleRecentPassword = () =>{
+        sendPasswordResetEmail(auth, email)
+        .then(result =>{ })
     }
 
     return (
@@ -77,16 +104,22 @@ const Login = () => {
         <div>
             <form onSubmit={handleRegistration}>
             <h3 style={{overflow:'hidden', color:"red"}}>Please {isLogin ? 'Login' : 'Register'}</h3>
+            {!isLogin && <div className="row mb-3 ">
+                <label htmlFor="inputEmail3" className="col-sm-2 col-form-label">Name</label>
+                <div className="col-sm-10">
+                <input onBlur={handleNameChange} type="name" className="form-control" id="inputEmail3" placeholder="Your Name" required/>
+                </div>
+            </div>}
             <div className="row mb-3 ">
                 <label htmlFor="inputEmail3" className="col-sm-2 col-form-label">Email</label>
                 <div className="col-sm-10">
-                <input onBlur={handleEmailchange} type="email" className="form-control" id="inputEmail3" required/>
+                <input onBlur={handleEmailchange} type="email" className="form-control" id="inputEmail4" placeholder="Enter PassWord" required/>
                 </div>
             </div>
             <div className="row mb-3">
                 <label htmlFor="inputPassword3" className="col-sm-2 col-form-label">Password</label>
                 <div className="col-sm-10">
-                <input onBlur={handlePasswordChange} type="password" className="form-control" id="inputPassword3" required/>
+                <input onBlur={handlePasswordChange} type="password" className="form-control" id="inputPassword3" placeholder="Enter Password" required/>
                 </div>
             </div>
             <div className="row mb-3">
@@ -102,7 +135,8 @@ const Login = () => {
                 {error}
             </div>
             </div>
-            <button type="submit" className="btn btn-primary px-5">{isLogin ? 'Login' :'Register'}</button>
+            <button type="submit" className="btn btn-primary m-5 p-2">{isLogin ? 'Login' :'Register'}</button><br />
+            <Button onClick={handleRecentPassword} variant="secondary" size="sm">Recet Password</Button>
             </form>
             <br /><br /><br />
         </div>
