@@ -66,38 +66,44 @@ const Home = () => {
                 <div className="col-lg-3 col-md-6 col-12 service">
                     <img id="service-img" src={emergency} alt="" />
                     <br />
-                    <p>24 Houre Emergency Service</p>
-                    <button className="btn btn-warning">Book Emergency</button>
+                    <p className="fw-bold">24 Houre Emergency Service</p><br />
+                    <p>We provide non-stop life-saving care when required, 24 hours a day, seven days a week. ER has got all the life saving support for critically ill patients including ventilators and defibrillators. All doctors and nurses are specially trained to deal with all types of emergency patients.</p>
+                    <button className="btn btn-warning m-4">Book Emergency</button>
                 </div>
                 <div className="col-lg-3 col-md-6 col-12 service">
                     <img id="service-img" src={dental} alt="" />
                     <br />
-                    <p>Specialised Dental Section</p>
-                    <button className="btn btn-warning">Book Dental Service</button>
+                    <p className="fw-bold">Specialised Dental Section</p>
+                    <p>A comprehensive Dental Centre became operational at Sono Plus Diginostic on 29th April 2012. The Dental Centre has been set up with the aim to provide an international standard dental treatment facility to satisfy and meet the demands of our community.</p>
+                    <button className="btn btn-warning m-4">Book Dental Service</button>
                 </div>
                 <div className="col-lg-3 col-md-6 col-12 service">
                     <img id="service-img" src={bady} alt="" />
                     <br />
-                    <p>Special Child Care</p>
-                    <button className="btn btn-warning">Book Emergency</button>
+                    <p className="fw-bold">Special Child Care</p>
+                    <p>Child care centers are usually located in commercial buildings. Centers are larger and care for more children than family child care providers. They are usually divided into groups or classrooms of similarly aged children.</p>
+                    <button className="btn btn-warning m-4">Book Emergency</button>
                 </div>
                 <div className="col-lg-3 col-md-6 col-12 service">
                     <img id="service-img" src={surgery} alt="" />
                     <br />
-                    <p>We Have Highly Qualified Surgery Section</p>
-                    <button className="btn btn-warning">Book Surgery Section </button>
+                    <p className="fw-bold">We Have Highly Qualified Surgery Section</p>
+                    <p>The Surgery Section’s purpose is to provide a forum for the discussion and advancement of the art, science and practice of general surgery with some emphasis on the branches and sub-specialties that relate to this to all healthcare professionals and their students. The Section’s regular meetings provide a platform for participants to keep up to date through the exchange of ideas and in turn, provide top-quality care to their patients.</p>
+                    <button className="btn btn-warning m-4">Book Surgery Section </button>
                 </div>
                 <div className="col-lg-3 col-md-6 col-12 service">
                     <img id="service-img" src={covid} alt="" />
                     <br />
-                    <p>We Have Highly Protected Covid Zone</p>
-                    <button className="btn btn-warning">Book Covid Zone</button>
+                    <p className="fw-bold">We Have Highly Protected Covid Zone</p>
+                    <p>Sono Plus Digonostic has been acting as one of the best hospitals for treating patients with Coronavirus. We provides 24/7 specialist coverage in Emergency to triage & identify COVID & Non-COVID patients, reliable Coronavirus/ COVID test by RT PCR method in out-patient, Post Covid Rehab, home sample collection, bulk sample collection & fast track service.</p>
+                    <button className="btn btn-warning m-4">Book Covid Zone</button>
                 </div>
                 <div className="col-lg-3 col-md-6 col-12 service">
                     <img id="service-img" src={test} alt="" />
                     <br />
-                    <p>We Provide All Medical Test You Need</p>
-                    <button className="btn btn-warning">Book Any Medical Test</button>
+                    <p className="fw-bold">We Provide All Medical Test You Need</p>
+                    <p>You want to live healthy? We have a guideline through all the meaningful service packages.Comprehensive physical exams are essential in maintaining good health.In United Hospital, our diagnostic expertise combined with the latest technology in pathology help in determining health problems. Regular health check-up can find problems before they start. Routine health check-up can help determine problems early with better chances</p>
+                    <button className="btn btn-warning m-4">Book Any Medical Test</button>
                 </div>
             </div>
             </div> 
