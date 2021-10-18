@@ -1,6 +1,12 @@
 .footer{
     width: auto;
-    background-color:lightseagreen;
+    background-color:rgb(24, 26, 25);
     color: white;
     padding: 5px;
+}
+
+#footer-logo{
+    margin-top: 30px;
+    height: 120px;
+    border-radius: 50%;
 }

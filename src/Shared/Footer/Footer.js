@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../../Image/sonoplus-logo-removebg-preview.png';
+import logo from '../../Image/sonoplus-logo.png';
 import "./Footer.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faMapMarkerAlt, faPhoneSquareAlt } from '@fortawesome/free-solid-svg-icons';
@@ -12,7 +12,7 @@ const Footer = () => {
         <>
         <div className="footer row">
         <div className="col-lg-3 col-md-6 col-12">
-            <img src={logo} alt="" />
+            <img id="footer-logo" src={logo} alt="" />
             <p>We Provide The Best Care</p>
         </div>
         <div className="col-lg-3 col-md-6 col-12">
