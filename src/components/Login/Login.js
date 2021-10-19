@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import initializeAuthentication from '../../Firebase/firebase.init';
-import { GoogleAuthProvider, getAuth, signInWithPopup, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendEmailVerification, sendPasswordResetEmail, updateProfile, signOut } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendEmailVerification, sendPasswordResetEmail, updateProfile } from "firebase/auth";
 import { Button } from 'react-bootstrap';
+import useFirebase from '../../hooks/usefirebase';
 
 
 initializeAuthentication();
-const googleProvider = new GoogleAuthProvider();
+// const googleProvider = new GoogleAuthProvider();
 
 const Login = () => {
-    const [user, setUser] = useState({});
+    const {signInUsingGoogle} = useFirebase();
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -17,19 +18,14 @@ const Login = () => {
     const auth = getAuth();
 
     // Google Sign In
-    const handleGoogleSignIn = () =>{
-        signInWithPopup(auth, googleProvider)
-        .then(result =>{
-            const user = result.user;
-            setUser(user);
-        })
-    }
-        const logout = () =>{
-            signOut(auth)
-            .then(()=>{
-                setUser({})
-            })
-        }
+    // const handleGoogleSignIn = () =>{
+    //     signInWithPopup(auth, googleProvider)
+    //     .then(result =>{
+    //         const user = result.user;
+    //         console.log(user);
+    //     })
+    // }
+        
 
     const toggleLogin = e =>{
         setIsLogin(e.target.checked);
@@ -153,7 +149,7 @@ const Login = () => {
         <div>-------------------</div>
         <br /><br /><br />
         <div>
-            <button onClick= {handleGoogleSignIn} className="btn-primary">Coogle Sign In</button>
+            <button onClick= {signInUsingGoogle} className="btn-primary">Coogle Sign In</button>
         </div>
         </>
     );

@@ -4,9 +4,11 @@ import logo from '../../Image/sonoplus-logo-removebg-preview.png';
 import { HashLink } from 'react-router-hash-link';
 import './Header.css';
 import { Link } from 'react-router-dom';
+import useFirebase from '../../hooks/usefirebase';
 
 const Header = () => {
     // const {} = useAuth
+    const {user, logout} = useFirebase()
     return (
             <>
             <Navbar  sticky="top" collapseOnSelect expand='lg'>
@@ -19,13 +21,8 @@ const Header = () => {
                     <Nav.Link as={HashLink} to="/home#doctors">Doctors</Nav.Link>
                     <Nav.Link as={HashLink} to="/home#news">News & Articals</Nav.Link>
                     <Nav.Link as={HashLink} to="/home#about">About US</Nav.Link>
-                    <Nav.Link as={Link} to="/login">Login</Nav.Link>
-                    {/* {users?.email?
-                        <Button onClick={logOut} variant="light">Logout</Button>:
-                        <Nav.Link as={Link} to="/login">Login</Nav.Link>}
-                    <Navbar.Text>
-                        Signed in as: <a href="#login">{users?.displayName}</a>
-                    </Navbar.Text> */}
+                    <Nav.Link as={Link} to="/login">Login{user.displayName}</Nav.Link>
+                    {user?.email && <button onClick={logout}>Log Out</button>}
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
