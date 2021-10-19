@@ -6,7 +6,7 @@ const BookedItem = ({bookedItem}) => {
         <div>
            <div className="service">
             <img src={serviceImg} alt="" />
-            <h6>Service:{id}</h6>
+            <h6 style={{overflow:'hidden'}}>Service:{id}</h6>
             <h3>{serviceName}</h3>
             <h5>Price: {cost}</h5>
             <p className="px-3">{description}</p>
