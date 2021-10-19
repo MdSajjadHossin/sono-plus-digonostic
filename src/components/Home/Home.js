@@ -55,7 +55,7 @@ const Home = () => {
         </Carousel>
         </div>
         {/* service section */}
-        <Services></Services>
+        <div><Services></Services></div>
         {/* Doctor Section */}
         <div id="doctors" className="doctor-container">
             <h2 className="m-4">About Our Doctors</h2>
