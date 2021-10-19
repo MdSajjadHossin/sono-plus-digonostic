@@ -56,8 +56,6 @@ const Home = () => {
         </div>
         {/* service section */}
         <Services></Services>
-        
-       
         {/* Doctor Section */}
         <div id="doctors" className="doctor-container">
             <h2 className="m-4">About Our Doctors</h2>
@@ -75,7 +73,7 @@ const Home = () => {
         </div>
         {/* news and article section */}
         <div id="news">
-            <h2 className="m-4">News & Articals</h2>
+            <h2 style={{overflow:'hidden'}} className="m-4">News & Articals</h2>
             <div className="row">
                 <div className="col-lg-3 col-md-6 col-12 service">
                     <img id="service-img" src={bdCovidNews} alt="" />
@@ -105,7 +103,6 @@ const Home = () => {
             <h2 className="m-4 about-us">About Us</h2>
             <div className="border border-danger border-5 rounded m-5 bg-danger">
             <img className="w-100 rounded" src={aboutUs} alt="" />
-            <button className="btn-primary m-3 p-2 rounded">Learn More</button>
             </div>
         </div>
         </>
