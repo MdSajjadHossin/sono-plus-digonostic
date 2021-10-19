@@ -10,6 +10,7 @@ import NewsAndArticle from './components/NewsAndArticle/NewsAndArticle';
 import Login from './components/Login/Login';
 import Footer from './Shared/Footer/Footer';
 import NotFound from './components/NotFound/NotFound';
+import Booking from './components/Booking/Booking/Booking';
 
 
 
@@ -37,6 +38,9 @@ function App() {
           </Route>
           <Route path="/login">
             <Login></Login>
+          </Route>
+        <Route path="/Booking/:serviceId">
+            <Booking></Booking>
           </Route>
           <Route exact path="*">
             <NotFound></NotFound>

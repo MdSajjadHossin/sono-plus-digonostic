@@ -1,0 +1,17 @@
+.service{
+    background-color: rgb(226, 241, 241);
+    border-radius:10px;
+    padding-bottom: 10px;
+}
+.service h3 {
+    overflow: hidden;
+}
+.service h5{
+    overflow: hidden;
+}
+.service img{
+    width: 350px;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 20px;
+}

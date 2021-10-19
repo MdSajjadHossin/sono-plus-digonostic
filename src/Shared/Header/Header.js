@@ -6,6 +6,7 @@ import './Header.css';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
+    // const {} = useAuth
     return (
             <>
             <Navbar  sticky="top" collapseOnSelect expand='lg'>

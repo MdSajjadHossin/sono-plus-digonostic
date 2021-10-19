@@ -4,17 +4,18 @@ import './Home.css';
 import img1 from '../../Image/slide-1.jpg';
 import img2 from '../../Image/slide-2.jpg';
 import img3 from '../../Image/slide-3.jpg';
-import emergency from '../../Image/Emergency.jpg';
-import dental from '../../Image/dentel.jpg';
-import bady from '../../Image/pediatration.jpg';
-import surgery from '../../Image/surgone.jpg';
-import covid from '../../Image/covid-19.jpg';
-import test from '../../Image/test.jpg';
+// import emergency from '../../Image/Emergency.jpg';
+// import dental from '../../Image/dentel.jpg';
+// import bady from '../../Image/pediatration.jpg';
+// import surgery from '../../Image/surgone.jpg';
+// import covid from '../../Image/covid-19.jpg';
+// import test from '../../Image/test.jpg';
 import doctor from '../../Image/doctor-smilly.jpg';
 import bdCovidNews from '../../Image/covid-news-bd.jpg';
 import healthNobel from '../../Image/health-nodel.jpg';
 import medigadget from '../../Image/medigadget.png';
 import aboutUs from '../../Image/medical-services.PNG';
+import Services from '../Services/Services';
 
 const Home = () => {
     return (
@@ -58,8 +59,9 @@ const Home = () => {
             </Carousel.Item>
         </Carousel>
         </div>
+        <Services></Services>
         {/* service section */}
-        <div id="services" className="service-container">
+        {/* <div id="services" className="service-container">
             <h1 className="m-4">We Provide</h1>
             <div>
             <div className="row">
@@ -107,7 +109,7 @@ const Home = () => {
                 </div>
             </div>
             </div> 
-        </div>
+        </div> */}
         {/* Doctor Section */}
         <div id="doctors" className="doctor-container">
             <h2 className="m-4">About Our Doctors</h2>

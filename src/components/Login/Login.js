@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import initializeAuthentication from '../../Firebase/firebase.init';
-import { GoogleAuthProvider, getAuth, signInWithPopup, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendEmailVerification, sendPasswordResetEmail, updateProfile } from "firebase/auth";
+import { GoogleAuthProvider, getAuth, signInWithPopup, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendEmailVerification, sendPasswordResetEmail, updateProfile, signOut } from "firebase/auth";
 import { Button } from 'react-bootstrap';
 
 
@@ -8,19 +8,28 @@ initializeAuthentication();
 const googleProvider = new GoogleAuthProvider();
 
 const Login = () => {
+    const [user, setUser] = useState({});
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     const [isLogin, setIsLogin] = useState('');
     const auth = getAuth();
+
+    // Google Sign In
     const handleGoogleSignIn = () =>{
         signInWithPopup(auth, googleProvider)
         .then(result =>{
             const user = result.user;
-            console.log(user);
+            setUser(user);
         })
     }
+        const logout = () =>{
+            signOut(auth)
+            .then(()=>{
+                setUser({})
+            })
+        }
 
     const toggleLogin = e =>{
         setIsLogin(e.target.checked);
