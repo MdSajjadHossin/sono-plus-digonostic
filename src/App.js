@@ -11,6 +11,7 @@ import Login from './components/Login/Login';
 import Footer from './Shared/Footer/Footer';
 import NotFound from './components/NotFound/NotFound';
 import Booking from './components/Booking/Booking/Booking';
+import AuthProvider from './context/AuthProvider';
 
 
 
@@ -18,6 +19,7 @@ import Booking from './components/Booking/Booking/Booking';
 function App() {
   return (
     <div className="App">
+      <AuthProvider>
       <Router>
         <Header></Header>
         <Switch>
@@ -48,6 +50,7 @@ function App() {
         </Switch>
         <Footer></Footer>
       </Router>
+      </AuthProvider>
     </div>
   );
 }

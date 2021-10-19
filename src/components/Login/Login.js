@@ -2,14 +2,15 @@ import React, { useState } from 'react';
 import initializeAuthentication from '../../Firebase/firebase.init';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendEmailVerification, sendPasswordResetEmail, updateProfile } from "firebase/auth";
 import { Button } from 'react-bootstrap';
-import useFirebase from '../../hooks/usefirebase';
+import useAuth from '../../hooks/useAuth';
+// import useFirebase from '../../hooks/usefirebase';
 
 
 initializeAuthentication();
 // const googleProvider = new GoogleAuthProvider();
 
 const Login = () => {
-    const {signInUsingGoogle} = useFirebase();
+    const {signInUsingGoogle} = useAuth();
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');

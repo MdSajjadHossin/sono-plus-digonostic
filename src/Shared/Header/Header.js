@@ -4,11 +4,12 @@ import logo from '../../Image/sonoplus-logo-removebg-preview.png';
 import { HashLink } from 'react-router-hash-link';
 import './Header.css';
 import { Link } from 'react-router-dom';
-import useFirebase from '../../hooks/usefirebase';
+import useAuth from '../../hooks/useAuth';
+// import useFirebase from '../../hooks/usefirebase';
 
 const Header = () => {
     // const {} = useAuth
-    const {user, logout} = useFirebase()
+    const {user, logout} = useAuth()
     return (
             <>
             <Navbar  sticky="top" collapseOnSelect expand='lg'>
