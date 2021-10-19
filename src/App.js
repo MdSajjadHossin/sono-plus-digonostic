@@ -12,6 +12,7 @@ import Footer from './Shared/Footer/Footer';
 import NotFound from './components/NotFound/NotFound';
 import Booking from './components/Booking/Booking/Booking';
 import AuthProvider from './context/AuthProvider';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 
 
 
@@ -32,18 +33,18 @@ function App() {
           <Route path="/services">
             <Services></Services>
           </Route>
-          <Route path="/doctors">
+          <PrivateRoute path="/doctors">
             <Doctor></Doctor>
-          </Route>
+          </PrivateRoute>
           <Route path="/news">
             <NewsAndArticle></NewsAndArticle>
           </Route>
           <Route path="/login">
             <Login></Login>
           </Route>
-        <Route path="/Booking/:serviceId">
+        <PrivateRoute path="/Booking/:serviceId">
             <Booking></Booking>
-          </Route>
+          </PrivateRoute>
           <Route exact path="*">
             <NotFound></NotFound>
           </Route>

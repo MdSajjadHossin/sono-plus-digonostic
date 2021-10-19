@@ -22,7 +22,7 @@ const Header = () => {
                     <Nav.Link as={HashLink} to="/home#doctors">Doctors</Nav.Link>
                     <Nav.Link as={HashLink} to="/home#news">News & Articals</Nav.Link>
                     <Nav.Link as={HashLink} to="/home#about">About US</Nav.Link>
-                    <Nav.Link as={Link} to="/login">Login{user.displayName}</Nav.Link>
+                    <Nav.Link as={Link} to="/login">Login {user.displayName}</Nav.Link>
                     {user?.email && <button onClick={logout}>Log Out</button>}
                     </Navbar.Collapse>
                 </Container>
